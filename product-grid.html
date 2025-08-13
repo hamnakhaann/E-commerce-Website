@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ElectroZone - Product Grid</title>
+  <link rel="stylesheet" href="product-grid.css">
+  <script src="main.js"></script>
+  <script src="product-grid.js" defer></script>
+</head>
+<body>
+   <header><div id="fetch-header"></div></header>
+ <main>
+  <div class="main-div">
+<!-- Side Bar-->
+<div id="sidebar" class="sidebar">
+    <!-- Category Dropdown -->
+    <div class="dropdown">
+      <div class="dropdown-toggle">Category <span class="arrow">&#x276F;</span></div>
+      <div class="dropdown-content">
+        <label><input type="checkbox" /> Phone Cases</label>
+        <label><input type="checkbox" /> Cables</label>
+        <label><input type="checkbox" /> Power Banks</label>
+        <div class="more hidden">
+          <label><input type="checkbox" /> Mount Holders</label>
+          <label><input type="checkbox" /> Wireless Chargers</label>
+        </div>
+        <button class="see-all">See All</button>
+      </div>
+    </div>
+
+    <!-- Brands Dropdown -->
+    <div class="dropdown">
+      <div class="dropdown-toggle">Brands <span class="arrow">&#x276F;</span></div>
+      <div class="dropdown-content">
+        <label><input type="checkbox" /> Samsung</label>
+        <label><input type="checkbox" /> Apple</label>
+        <label><input type="checkbox" /> Xiaomi</label>
+        <div class="more hidden">
+          <label><input type="checkbox" /> OnePlus</label>
+          <label><input type="checkbox" /> Infinix</label>
+        </div>
+        <button class="see-all">See All</button>
+      </div>
+    </div>
+
+    <!-- Features Dropdown -->
+    <div class="dropdown">
+      <div class="dropdown-toggle">Features <span class="arrow">&#x276F;</span></div>
+      <div class="dropdown-content">
+        <label><input type="checkbox" /> Fast Charging</label>
+        <label><input type="checkbox" /> Foldable</label>
+        <label><input type="checkbox" /> Magnetic</label>
+        <div class="more hidden">
+          <label><input type="checkbox" /> Waterproof</label>
+          <label><input type="checkbox" /> Compact</label>
+        </div>
+        <button class="see-all">See All</button>
+      </div>
+    </div>
+
+    <!-- Price Range -->
+    <div class="dropdown">
+      <div class="dropdown-toggle">Price Range <span class="arrow">&#x276F;</span></div>
+      <div class="dropdown-content">
+        <div class="range-container">
+          <input type="range" id="priceRange" min="0" max="10000" value="5000" />
+          <div>Selected: <span id="rangeValue">5000</span> PKR</div>
+        </div>
+        <div class="min-max">
+          <input type="number" placeholder="Min" />
+          <input type="number" placeholder="Max" />
+        </div>
+        <button class="apply-btn">Apply</button>
+      </div>
+    </div>
+
+    <!-- Condition -->
+    <div class="dropdown">
+      <div class="dropdown-toggle">Condition <span class="arrow">&#x276F;</span></div>
+      <div class="dropdown-content">
+        <label><input type="radio" name="condition" /> New</label>
+        <label><input type="radio" name="condition" /> Used</label>
+        <label><input type="radio" name="condition" /> Refurbished</label>
+      </div>
+    </div>
+
+    <!-- Ratings -->
+    <div class="dropdown">
+      <div class="dropdown-toggle">Ratings <span class="arrow">&#x276F;</span></div>
+      <div class="dropdown-content">
+        <label class="stars"><input type="checkbox"  /> ★★★★★</label>
+        <label class="stars"><input type="checkbox" /> ★★★★☆</label>
+        <label class="stars"><input type="checkbox" /> ★★★☆☆</label>
+        <label class="stars"><input type="checkbox" /> ★★☆☆☆</label>
+        <label class="stars"><input type="checkbox" /> ★☆☆☆☆</label>
+      </div>
+    </div>
+  </div>
+  <div class="products-list">
+  <!-- Top Filter Panel -->
+<div class="top-panel">
+  <div class="left-info">
+    <p>12,071 items in <strong>Mobile accessory</strong></p>
+
+    <label for="sort-select">Sort by:</label>
+    <select id="sort-select">
+      <option value="featured">Featured</option>
+      <option value="price_low_high">Price: Low to High</option>
+      <option value="price_high_low">Price: High to Low</option>
+      <option value="rating">Top Rated</option>
+    </select>
+
+    <label class="verified">
+      <input type="checkbox" checked /> Verified only
+    </label>
+  </div>
+
+  <div class="view-icons">
+<a href="product-list.html">
+  <i class="fas fa-list"></i>
+</a>
+    <i class="fas fa-th-large active"></i>
+  </div>
+</div>
+
+<!-- Product List View -->
+<div class="product-list-view grid-view">
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://justshop.pk/wp-content/uploads/2024/05/canon-eos-1-1.jpg" alt="Canon EOS 2000D DSLR Camera">
+  
+    <p class="price">
+      <span class="new-price">$449.00</span>
+      <span class="old-price">$499.00</span>
+    </p>
+    <div class="product-meta">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">8.5</span>
+      <span class="dot">•</span>
+      <span class="orders">320 orders</span>
+      <h3>Canon EOS 2000D DSLR</h3>
+    </div>
+  </div>
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://m.media-amazon.com/images/I/71S8U9VzLTL._AC_SX679_.jpg" alt="GoPro HERO11 Black">
+   
+    <p class="price"><span class="new-price">$399.99</span></p>
+    <div class="product-meta">
+      <div class="stars">★★★★☆</div>
+      <span class="rating-score">9.0</span>
+      <span class="dot">•</span>
+      <span class="orders">500+ orders</span>
+       <h3>GoPro HERO11 Black</h3>
+    </div>
+  </div>
+
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://www.hoxtonmacs.co.uk/cdn/shop/files/apple-macbook-air-13-inch-macbook-air-13-inch-m2-midnight-2022-fair-41944397218108_1024x1024.jpg?v=1688460815" alt="MacBook Air M2">
+   
+    <p class="price"><span class="new-price">$1,099.00</span></p>
+    <div class="product-meta">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">9.7</span>
+      <span class="dot">•</span>
+      <span class="orders">210 orders</span>
+     <h3>MacBook Air 13 new M2</h3>
+    </div>
+  </div>
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://images.priceoye.pk/samsung-galaxy-watch-6-bluetooth-40mm-pakistan-priceoye-6lh88-500x500.webp" alt="Samsung Galaxy Watch 6">
+   
+    <p class="price"><span class="new-price">$299.00</span></p>
+    <div class="product-meta">
+      <div class="stars">★★★★☆</div>
+      <span class="rating-score">8.9</span>
+      <span class="dot">•</span>
+      <span class="orders">180 orders</span>
+     <h3>Galaxy Watch 6 40mm</h3>
+    </div>
+  </div>
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://vmart.pk/cdn/shop/files/Sony-WH-1000XM5-Wireless-Noise-Cancelling-Headphones-Blue.jpg?v=1737612516" alt="Sony Headphones">
+    
+    <p class="price"><span class="new-price">$348.00</span></p>
+    <div class="product-meta">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">9.3</span>
+      <span class="dot">•</span>
+      <span class="orders">750+ orders</span>
+   <h3>Sony WH - 1000XM5</h3>
+
+    </div>
+  </div>
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc4RU3RVsKmNekMxGoXz4psrCqp2FN8NfM5Q&s" alt="Anker Power Bank">
+    
+    <p class="price"><span class="new-price">$49.99</span></p>
+    <div class="product-meta">
+      <div class="stars">★★★★☆</div>
+      <span class="rating-score">8.3</span>
+      <span class="dot">•</span>
+      <span class="orders">900 orders</span>
+   <h3>Anker PowerCore 20,000mAh</h3>
+    </div>
+  </div>
+
+  <!-- Additional 3 Products -->
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://cdn.idealo.com/folder/Product/201131/4/201131414/s11_produktbild_max/samsung-galaxy-buds-2-pro.jpg" alt="Samsung Buds 2 Pro">
+    
+    <p class="price"><span class="new-price">$229.00</span></p>
+    <div class="product-meta">
+      <div class="stars">★★★★☆</div>
+      <span class="rating-score">8.6</span>
+      <span class="dot">•</span>
+      <span class="orders">400+ orders</span>
+    <h3>Samsung Galaxy Buds 2 Pro</h3>
+    </div>
+  </div>
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://images.philips.com/is/image/PhilipsConsumer/55OLED807_12-IMS-en_PK?wid=420&hei=360&$pnglarge$" alt="Philips OLED TV">
+    
+    <p class="price">
+      <span class="new-price">$1,399.00</span>
+      <span class="old-price">$1,699.00</span>
+    </p>
+    <div class="product-meta">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">9.4</span>
+      <span class="dot">•</span>
+      <span class="orders">950+ orders</span>
+    <h3>Philips 55" OLED TV</h3>
+    </div>
+  </div>
+
+  <div class="product-item">
+    <div class="wishlist"><i class="far fa-heart"></i></div>
+    <img src="https://static-01.daraz.pk/p/e82804ea43bda8232266d53ea019cf3c.jpg" alt="Logitech MX Master 3S">
+    
+    <p class="price">
+        <span class="new-price">$99.99</span>
+     <span class="old-price">$1,699.00</span>
+    </p>
+    <div class="product-meta">
+      <div class="stars">★★★★★</div>
+      <span class="rating-score">9.2</span>
+      <span class="dot">•</span>
+      <span class="orders">600+ orders</span>
+    <h3>Logitech MX Master 3S</h3>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
+
+ </main>
+ <div class="newsletter-section">
+  <h3>Subscribe on our newsletter</h3>
+  <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Email" />
+    <button>Subscribe</button>
+  </div>
+</div>
+    <footer><div id="fetch-footer"></div></footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

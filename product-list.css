@@ -1,0 +1,392 @@
+/* ============ BASE ============ */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7fafc;
+  font-family: sans-serif;
+}
+
+#header-footer {
+  flex-shrink: 0;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+}
+
+/* ============ LAYOUT ============ */
+.main-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  gap: 20px;
+  box-sizing: border-box;
+  position:sticky;
+}
+
+#header {
+  height: 80px;
+  width: 100%;
+}
+
+/* ============ SIDEBAR ============ */
+#sidebar {
+  width: 350px;
+  padding: 1rem;
+  box-shadow: 1px 0 5px rgba(0,0,0,0.1);
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+/* Dropdowns in Sidebar */
+.dropdown {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  padding-left: 0.8rem;
+}
+
+.dropdown.open .dropdown-content {
+  display: flex;
+}
+
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 8px;
+}
+
+.dropdown-content label:hover {
+  background-color: #f0f0f0;
+}
+
+.more.hidden {
+  display: none;
+}
+
+.arrow {
+  transition: transform 0.3s;
+  transform: rotate(90deg);
+  margin-left: 8px;
+}
+
+.dropdown.open .arrow {
+  transform: rotate(-90deg);
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.min-max {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.min-max input {
+  width: 100%;
+  padding: 0.3rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+.apply-btn, .see-all {
+  background-color: white;
+  color: #007BFF;
+  padding: 0.4rem;
+  border: 1px solid #007BFF;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  width: 80px;
+}
+
+/* ============ RESPONSIVE SIDEBAR ============ */
+@media (max-width: 768px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .main-div {
+    flex-direction: column;
+  }
+}
+
+/* ============ PRODUCT LIST ============ */
+.products-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product-list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Top Filter Panel */
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  margin-top: 20px;
+  font-size: 14px;
+  gap: 10px;
+  height: 40px;
+}
+
+.top-panel .left-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.top-panel .left-info p{
+    margin-bottom: 0px;
+}
+.top-panel select {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.top-panel .verified {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.top-panel .view-icons i {
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #444;
+}
+
+.top-panel .view-icons i.active,
+.top-panel .view-icons i:hover {
+  color: #007BFF;
+}
+
+/* ============ PRODUCT ITEM ============ */
+.product-item {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.product-item img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.price {
+  margin: 4px 0;
+}
+
+.new-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-right: 8px;
+}
+
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.product-meta .filled {
+  color: orange;
+}
+.stars{
+    color: #e38b06;
+}
+
+.rating-score {
+  font-weight: bold;
+}
+
+.orders {
+  color: #777;
+}
+
+.shipping {
+  color: green;
+  font-weight: 500;
+}
+
+.dot {
+  font-size: 18px;
+  color: #ccc;
+  line-height: 0;
+}
+
+.desc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.view-details {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 18px;
+  color: #007BFF;
+  border: 1px solid #eee;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.newsletter-section {
+
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #eaebeb;
+}
+
+.newsletter-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.newsletter-section p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+
+}
+
+.newsletter-form {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
+  font-size: 14px;
+}
+
+.newsletter-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #0056cc;
+}
+.newsletter {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-top: 2px solid #e5e5e5;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
